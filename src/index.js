@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useTransition, animated } from 'react-spring'
 
+import { StateProvider, initialState, stateReducer } from "./context";
+
 import Landing from './components/landing'
 import App from './app';
 
+import style from './styles/app.module.scss';
 import './index.scss';
 
 function Index() {
@@ -18,13 +21,13 @@ function Index() {
   })
 
   return (
-    <>
-      {transitions.map(({ item, key, props }) =>
-        item
-          ? <animated.div style={props} key={key}><Landing /></animated.div>
-          : <animated.div style={props} key={key}><App /></animated.div>
+    <StateProvider initialState={initialState} reducer={stateReducer}>
+      {transitions.map(({ item, key, props }) => item
+        ? <animated.div style={props} key={key}><Landing /></animated.div>
+        : <animated.div style={props} key={key}><App /></animated.div>
       )}
-    </>
+      <div className={style.app_bg} />
+    </StateProvider>
   )
 }
 

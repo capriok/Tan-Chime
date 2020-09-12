@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import style from '../styles/timer.module.scss'
 
@@ -15,7 +15,7 @@ const format = (int) => {
 const Timer = ({ timer, setTimer }) => {
 	const TIME = `${format(timer.min)}:${format(timer.sec)}`
 
-	const [chime] = useSound(CHIME_TONE, { volume: .8 });
+	const [chime] = useSound(CHIME_TONE, { volume: .6, playbackRate: .45, /* soundEnabled: false */ });
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -34,6 +34,7 @@ const Timer = ({ timer, setTimer }) => {
 
 	useEffect(() => {
 		let min = timer.min
+		console.log(min);
 		if (min === 0) return
 		chime()
 		if (min <= 1) return
@@ -42,7 +43,7 @@ const Timer = ({ timer, setTimer }) => {
 			chime()
 			count++
 			if (count === min - 1) clearInterval(chimer)
-		}, 1100);
+		}, 750);
 	}, [timer.min])
 
 	return (

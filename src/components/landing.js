@@ -11,7 +11,7 @@ const AppLoad = () => {
 			<div>
 				<h1>Tan Chime</h1>
 				<img className={style.loader} src={loader} alt="" />
-				<img className={style.load_bg} src={loadBG} alt="" />
+				{/* <img className={style.load_bg} src={loadBG} alt="" /> */}
 			</div>
 		</div>
 	)

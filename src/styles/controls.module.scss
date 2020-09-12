@@ -4,5 +4,19 @@
 	flex: 0.5;
 	@include flex;
 	width: 100vw;
-	margin-bottom: 40px;
+	button {
+		* {
+			font-size: 1.25rem;
+			color: black;
+		}
+		@include flex;
+		$size: 75px;
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		border: 2px solid black;
+		box-shadow: 0px 3px 20px -5px black;
+		background: rgba(255, 255, 255, 0.5);
+	}
+	margin: 20px;
 }

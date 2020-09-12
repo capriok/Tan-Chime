@@ -5,12 +5,10 @@
 	position: fixed;
 	top: 0;
 	@include flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	width: 100vw;
-	padding: 10px;
-	background-color: tr;
+	padding-top: 10px;
 	img {
-		filter: invert(1);
-		width: 35px;
+		width: 40px;
 	}
 }

@@ -1,0 +1,8 @@
+@import "../index.scss";
+
+.controls {
+	flex: 0.5;
+	@include flex;
+	width: 100vw;
+	margin-bottom: 40px;
+}

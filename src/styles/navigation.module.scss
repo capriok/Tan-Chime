@@ -1,0 +1,16 @@
+@import "../index.scss";
+
+.navigation {
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	@include flex;
+	justify-content: space-evenly;
+	width: 100vw;
+	padding: 10px;
+	background-color: tr;
+	img {
+		filter: invert(1);
+		width: 35px;
+	}
+}

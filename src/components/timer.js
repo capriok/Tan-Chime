@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-import style from '../styles/main.module.scss'
+import style from '../styles/timer.module.scss'
+
+import useSound from 'use-sound';
+import CHIME_TONE from '../assets/chime_3s.mp3'
 
 const format = (int) => {
 	if (int < 10) {
@@ -10,8 +13,9 @@ const format = (int) => {
 	return int
 }
 const Timer = ({ timer, setTimer }) => {
-
 	const TIME = `${format(timer.min)}:${format(timer.sec)}`
+
+	const [chime] = useSound(CHIME_TONE, { volume: .8 });
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -28,13 +32,24 @@ const Timer = ({ timer, setTimer }) => {
 		}
 	}, [timer.clock, timer.min, timer.sec, timer.on]);
 
+	useEffect(() => {
+		let min = timer.min
+		if (min === 0) return
+		chime()
+		if (min <= 1) return
+		let count = 0
+		let chimer = setInterval(() => {
+			chime()
+			count++
+			if (count === min - 1) clearInterval(chimer)
+		}, 1100);
+	}, [timer.min])
+
 	return (
 		<div className={style.timer}>
-			<p>{TIME}</p>
+			<div className={style.time}>{TIME}</div>
 		</div>
 	)
 }
 
 export default Timer
-
-console.log()

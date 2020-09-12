@@ -1,0 +1,21 @@
+@import "../index.scss";
+
+.timer {
+	flex: 2;
+	@include flex;
+	position: relative;
+	width: 100%;
+	.time {
+		font-size: 3.5rem;
+		@include flex;
+		width: 55vw;
+		height: 55vw;
+		margin-bottom: 25px;
+		border-radius: 50%;
+		border: 3px solid black;
+		box-shadow: 0px 3px 20px -5px black;
+		background-color: white;
+	}
+	mask-image: radial-gradient(125% 25% at bottom, transparent 50%, #fff 50.5%);
+	background: linear-gradient(0deg, #4682b4 23%, #3270c8 100%);
+}

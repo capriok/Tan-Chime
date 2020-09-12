@@ -1,6 +1,6 @@
 @import "../index.scss";
 
-.app_load {
+.landing {
 	@include flex;
 	div {
 		@include flex;
@@ -17,12 +17,11 @@
 			margin-top: 25%;
 		}
 		.load_bg {
-			position: absolute;
+			position: fixed;
 			top: 0;
-			left: 0;
 			height: 100vh;
 			z-index: -1;
-			opacity: 0.7;
+			opacity: 0.85;
 		}
 	}
 }

@@ -9,7 +9,7 @@ import Timer from './components/timer'
 import Controls from './components/controls'
 import Analytics from './components/analytics'
 
-const INIT_TIMER = { min: 2, sec: 59, on: false }
+const INIT_TIMER = { min: 0, sec: 0, on: false }
 
 const App = () => {
   const [timer, setTimer] = useState(INIT_TIMER)

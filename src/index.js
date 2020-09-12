@@ -11,7 +11,7 @@ import style from './styles/app.module.scss';
 import './index.scss';
 
 function Index() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   setTimeout(() => setLoading(false), 3000)
 
   const transitions = useTransition(loading, null, {

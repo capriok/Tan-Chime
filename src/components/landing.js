@@ -2,7 +2,6 @@ import React from 'react'
 
 import style from '../styles/landing.module.scss'
 
-import loadBG from '../assets/load-bg.jpg'
 import loader from '../assets/loader.svg'
 
 const AppLoad = () => {

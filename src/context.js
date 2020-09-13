@@ -8,10 +8,7 @@ export const StateProvider = ({ reducer, initialState, children }) => (
 export const useStateValue = () => useContext(StateContext)
 
 export const initialState = {
-	views: {
-		timer: true,
-		analytics: false
-	}
+	prop: ''
 }
 
 export const stateReducer = (state, action) => {
@@ -19,7 +16,7 @@ export const stateReducer = (state, action) => {
 		case "VIEW_ACTION":
 			return {
 				...state,
-				views: action.views
+				prop: action.prop
 			};
 		default:
 			return state;

@@ -10,8 +10,11 @@ import App from './app';
 import style from './styles/app.module.scss';
 import './index.scss';
 
+let LOAD = true
+if (process.env.NODE_ENV === 'development') LOAD = false
+
 function Index() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(LOAD)
   setTimeout(() => setLoading(false), 3000)
 
   const transitions = useTransition(loading, null, {

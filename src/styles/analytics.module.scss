@@ -1,4 +1,42 @@
 @import "../index.scss";
 
 .analytics {
+	position: relative;
+	@include flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-top: 100px;
+	width: 100vw;
+	height: 100vh;
+	h1 {
+		margin-bottom: 20px;
+	}
+	.sessions {
+		max-height: 50vh;
+		border-top: 1px solid black;
+		background-color: rgba(255, 255, 255, 0.4);
+		.session {
+			position: relative;
+			@include flex;
+			justify-content: space-evenly;
+			width: 100vw;
+			padding: 5px 0;
+			border-bottom: 1px solid black;
+			span {
+				flex: 1;
+				text-align: center;
+			}
+			img {
+				position: absolute;
+				top: 50%;
+				transform: translate(0, -50%);
+				width: 20px;
+			}
+		}
+	}
+	.options {
+		width: 40px;
+		position: absolute;
+		bottom: 10px;
+	}
 }

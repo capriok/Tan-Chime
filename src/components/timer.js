@@ -1,21 +1,18 @@
 import React, { useEffect } from 'react'
+import format from '../utils/format'
 
 import style from '../styles/timer.module.scss'
 
 import useSound from 'use-sound';
 import CHIME_TONE from '../assets/chime_3s.mp3'
 
-const format = (int) => {
-	if (int < 10) {
-		let pad = '0' + int.toString()
-		return pad
-	}
-	return int
-}
-const Timer = ({ timer, setTimer }) => {
-	const TIME = `${format(timer.min)}:${format(timer.sec)}`
+let VOLUME = 1
+if (process.env.NODE_ENV === 'development') VOLUME = .6
 
-	const [chime] = useSound(CHIME_TONE, { volume: .6, playbackRate: .45, /* soundEnabled: false */ });
+const Timer = ({ timer, setTimer }) => {
+
+	const TIME = format(timer.min, timer.sec)
+	const [chime] = useSound(CHIME_TONE, { volume: VOLUME, playbackRate: .45 })
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -34,7 +31,6 @@ const Timer = ({ timer, setTimer }) => {
 
 	useEffect(() => {
 		let min = timer.min
-		console.log(min);
 		if (min === 0) return
 		chime()
 		if (min <= 1) return

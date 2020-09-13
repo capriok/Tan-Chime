@@ -19,7 +19,7 @@ const Controls = ({ timer, setTimer, INIT_TIMER }) => {
 		setNewAnalytics({
 			id: currentStorage.length + 1,
 			length: TIME,
-			date: moment().format('l'),
+			date: moment().format('l').substring(0, moment().format('l').length - 2),
 			time: moment().format('LT')
 		})
 		setTimer(INIT_TIMER)

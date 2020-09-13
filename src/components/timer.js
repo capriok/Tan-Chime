@@ -1,3 +1,4 @@
+/*eslint react-hooks/exhaustive-deps: "off"*/
 import React, { useEffect } from 'react'
 import format from '../utils/format'
 

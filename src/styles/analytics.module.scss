@@ -10,16 +10,19 @@
 	height: 100vh;
 	h1 {
 		margin-bottom: 20px;
+		font-weight: 500;
 	}
 	.sessions {
-		max-height: 50vh;
+		max-height: 65vh;
+		overflow-x: hidden;
+		overflow-y: scroll;
 		border-top: 1px solid black;
 		background-color: rgba(255, 255, 255, 0.4);
 		.session {
 			position: relative;
 			@include flex;
 			justify-content: space-evenly;
-			width: 100vw;
+			width: calc(100vw - 7px);
 			padding: 5px 0;
 			border-bottom: 1px solid black;
 			span {
@@ -33,10 +36,24 @@
 				width: 20px;
 			}
 		}
+		.sticky {
+			z-index: 1;
+			position: sticky;
+			top: 0;
+			background-color: rgb(225, 225, 225);
+		}
 	}
 	.options {
-		width: 40px;
 		position: absolute;
+		@include flex;
 		bottom: 10px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border: 2px solid black;
+		background-color: rgba(255, 255, 255, 0.6);
+		img {
+			width: 40px;
+		}
 	}
 }

@@ -1,3 +1,4 @@
+/*eslint react-hooks/exhaustive-deps: "off"*/
 import { useState, useEffect } from 'react'
 
 const useLocalAnalytics = () => {

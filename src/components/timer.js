@@ -7,7 +7,7 @@ import style from '../styles/timer.module.scss'
 import useSound from 'use-sound';
 import CHIME_TONE from '../assets/chime_3s.mp3'
 
-let VOLUME = 1
+let VOLUME = 1.5
 if (process.env.NODE_ENV === 'development') VOLUME = .6
 
 const Timer = ({ timer, setTimer }) => {
